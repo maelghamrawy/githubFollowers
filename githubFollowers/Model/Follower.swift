@@ -8,8 +8,7 @@
 import Foundation
 
 struct Follower: Codable {
-    
     var login: String
-    var avaterUrl: String
+    var avatarUrl: String
     
 }
