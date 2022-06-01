@@ -13,7 +13,7 @@ class SearchVC: UIViewController {
     let userNameTextField = GFtexteField()
     let callActionButton = GFButton(backgrouncolor: .systemBlue, title: "Get Follower")
     
-    var isUserNameIsEntered: Bool {return !userNameTextField.text!.isEmpty}
+    var isUserNameIsEntered: Bool { return !userNameTextField.text!.isEmpty }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,7 @@ class SearchVC: UIViewController {
     }
     
     @objc func pushFollowerListVC() {
+        
         guard isUserNameIsEntered else{
             presentGFAlertOnMainThread(title: "Empty user name", message: "Please entre a username. We need to know who to look for 😀.", buttonTitle: "Ok")
             return
@@ -66,7 +67,6 @@ class SearchVC: UIViewController {
         view.addSubview(userNameTextField)
         userNameTextField.delegate = self
         
-        
         NSLayoutConstraint.activate([
             userNameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 65 ),
             userNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -79,7 +79,6 @@ class SearchVC: UIViewController {
     func configureCallActionButton() {
         view.addSubview(callActionButton)
         callActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
-        
         
         NSLayoutConstraint.activate([
             callActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
