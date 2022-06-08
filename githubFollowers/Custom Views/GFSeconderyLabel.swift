@@ -1,14 +1,13 @@
 //
-//  GFTiltlelabel.swift
+//  GFSeconderyLabel.swift
 //  githubFollowers
 //
-//  Created by Mahmoud on 21/05/2022.
+//  Created by Mahmoud on 02/06/2022.
 //
 
 import UIKit
 
-class GFTiltlelabel: UILabel {
-
+class GFSeconderyLabel: UILabel {
     override init(frame:CGRect) {
         super.init(frame: frame)
     }
@@ -17,18 +16,19 @@ class GFTiltlelabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
+    init(fontSize: CGFloat) {
         super.init(frame: .zero)
-        self.textAlignment = textAlignment
-        self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
+        font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         configure()
     }
+    
    private func configure(){
-        textColor = .label
+        textColor = .secondaryLabel
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
-        lineBreakMode = .byTruncatingTail
+        minimumScaleFactor = 0.90
+        lineBreakMode = .byWordWrapping
         translatesAutoresizingMaskIntoConstraints = false
         
     }
+
 }
